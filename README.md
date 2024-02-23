@@ -1,41 +1,45 @@
+
 # README Generator
 
-## User Story
+## Description
+The README Generator is a command-line application that prompts users with a series of questions and uses the responses to dynamically generate a professional README.md file for their projects.
 
-AS A developer
-<br>
-I WANT a README generator
-<br>
-SO THAT I can quickly create a professional README for a new project
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Badges](#badges)
+- [Features](#features)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
-## Acceptance Criteria
+## Installation
+To install the README Generator, run: npm i inquirer@8.2.4
 
-GIVEN a command-line application that accepts user input
-<br>
-WHEN I am prompted for information about my application repository
-<br>
-THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
-<br>
-WHEN I enter my project title
-<br>
-THEN this is displayed as the title of the README
-<br>
-WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
-<br>
-THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
-<br>
-WHEN I choose a license for my application from a list of options
-<br>
-THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-<br>
-WHEN I enter my GitHub username
-<br>
-THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
-<br>
-WHEN I enter my email address
-<br>
-THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
-<br>
-WHEN I click on the links in the Table of Contents
-<br>
-THEN I am taken to the corresponding section of the README
+## Usage
+Use the command node index.js to initiate the README generation process. Follow the prompts, and upon completion, the application will automatically create a README.md file.
+
+## Credits
+
+
+## License
+![None License](https://img.shields.io/badge/License-None-brightgreen)
+
+This project is licensed under the None License - see the [LICENSE](LICENSE) file for details.
+
+## Badges
+version
+
+## Features
+- Dynamic README generation based on user input
+
+## Contributing
+- License badge integrationContributions are welcome! Fork the repository, create a new branch, make your changes, and submit a pull request. Please follow the existing coding style and include tests for new features.
+
+## Tests
+
+
+## Questions
+For questions about this project, contact [prappleman](https://github.com/prappleman) via email at parker.rappleye1@gmail.com.
