@@ -36,11 +36,6 @@ const questions = [
   },
   {
     type: 'input',
-    name: 'badges',
-    message: 'If applicable, provide any badges you want to include (e.g., build status, version):'
-  },
-  {
-    type: 'input',
     name: 'features',
     message: 'List any features of your project:'
   },
@@ -68,17 +63,21 @@ const questions = [
 
 // Function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, (err) =>
-    err ? console.error(err) : console.log('README.md generated successfully!')
-  );
+    fs.writeFile(fileName, data, (err) => {
+        if (err) {
+            console.error(err);
+        } else {
+            console.log(`${fileName} overwritten successfully!`);
+        }
+    });
 }
 
 // Function to initialize app
 function init() {
   inquirer.prompt(questions)
     .then((answers) => {
-      const readmeContent = generateReadme(answers);
-      writeToFile('README.md', readmeContent);
+        const readmeContent = generateReadme(answers);
+        writeToFile('README.md', readmeContent);
     })
     .catch((error) => console.error(error));
 }
@@ -96,7 +95,6 @@ ${data.description}
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [Badges](#badges)
 - [Features](#features)
 - [Contributing](#contributing)
 - [Tests](#tests)
@@ -115,9 +113,6 @@ ${data.credits}
 ![${data.license} License](https://img.shields.io/badge/License-${data.license}-brightgreen)
 
 This project is licensed under the ${data.license} License - see the [LICENSE](LICENSE) file for details.
-
-## Badges
-${data.badges}
 
 ## Features
 ${data.features}
