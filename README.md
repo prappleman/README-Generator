@@ -21,6 +21,8 @@ To install the README Generator, run: npm i inquirer@8.2.4
 ## Usage
 Use the command node index.js to initiate the README generation process. Follow the prompts, and upon completion, the application will automatically create a README.md file.
 
+<img src="develop/assets/terminal.png" title="terminal questions">
+
 ## Credits
 Parker Rappleye
 
