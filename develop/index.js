@@ -1,8 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// Array of questions for user input
-const questions = [
+
+// Function to initialize app
+function init() {
+  inquirer.prompt([
   {
     type: 'input',
     name: 'projectTitle',
@@ -59,28 +61,26 @@ const questions = [
     name: 'email',
     message: 'What is your email address?'
   }
-];
+])
+  .then((answers) => {
+    const readmeContent = generateReadme(answers);
+    writeToFile('README.md', readmeContent);
+  })
+  .catch((error) => console.error(error));
+}
+
 
 // Function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) => {
-        if (err) {
-            console.error(err);
-        } else {
-            console.log(`${fileName} overwritten successfully!`);
-        }
-    });
+  fs.writeFile(fileName, data, (err) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(`${fileName} overwritten successfully!`);
+    }
+  });
 }
 
-// Function to initialize app
-function init() {
-  inquirer.prompt(questions)
-    .then((answers) => {
-        const readmeContent = generateReadme(answers);
-        writeToFile('README.md', readmeContent);
-    })
-    .catch((error) => console.error(error));
-}
 
 // Function to generate README content
 function generateReadme(data) {
@@ -127,6 +127,7 @@ ${data.tests}
 For questions about this project, contact [${data.githubUsername}](https://github.com/${data.githubUsername}) via email at ${data.email}.
 `;
 }
+
 
 // Function call to initialize app
 init();
